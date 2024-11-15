@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbelMath.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+        <!-- custom css file link  -->
+    <title>Multiple Choice Quiz</title>
+
+    <!-- css file link -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header class="header">
+        <section class="flex">
+            <a href="home.html" class="logo">AbelMath.</a>
+            <div class="icons">
+                <div id="menu-btn" class="fas fa-bars"></div>
+                <div id="search-btn" class="fas fa-search"></div>
+                <div id="user-btn" class="fas fa-user"></div>
+               
+            </div>
+
+            <div class="profile">
+                <img src="../images/pic-5.jpg" alt="" >
+                <h3>Abel Apriliani</h3>
+                <a href="profile.html" class="btn">view profile</a>
+                <div class="flex-btn">
+                    <a href="login.html" class="option-btn">login</a>
+                    <a href="register.html" class="option-btn">register</a>
+                </div>
+
+
+            </div>
+        </sectuon>
+
+    </header>
+     
+      <div class="side-bar">
+
+        <div  class="close-btn">
+           <i class="fas fa-times"></i>
+        </div>
+     
+        <div class="profile">
+            <img src="../images/pic-5.jpg" alt="" >
+            <h3>Abel Apriliani</h3>
+            <a href="profile.html" class="btn">view profile</a>
+        </div>
+     
+        <nav class="navbar">
+            <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+            <a href="playlist.html"><i class="fas fa-graduation-cap"></i><span>playlist</span></a>
+            <a href="quiz.html"><i class="fas fa-clipboard"></i><span>quiz corner</span></a>
+            <a href="calculator.html"><i class="fas fa-calculator"></i><span>calculator</span></a>
+         </nav>
+          
+     </div>
+    <section class="multiple-choice">
+    <h1 id="title">Multiple Choice Quiz</h1>
+
+    <!-- quiz-container -->
+    <div id="quiz-container">
+        <!-- question container -->
+        <div class="questions">
+            <h2 id="question"></h2>
+            <ol type="A">
+                <li class="option"><span id="option0" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option1" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option2" onclick="calcScore(this)"></span></li>
+                <li class="option"><span id="option3" onclick="calcScore(this)"></span></li>
+            </ol>
+            <h4 id="stat"></h4>
+        </div>
+
+        <div class="buttons">
+            <button type="button" class="next">Next</button>
+        </div>
+
+    </div>
+
+    <!-- scoreboard section -->
+    <div id="scoreboard">
+        <h2 id="score-title">Your Score</h2>
+        <h2 id="score"></h2>
+        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+        <button type="button" id="check-answer" onclick="checkAnswer()">Check Answers</button>
+    </div>
+
+    <!-- answers section -->
+    <div id="answerBank">
+        <h2>Answers :</h2>
+        <ol type="1" id="answers">
+
+        </ol>
+        <button type="button" id="score-btn" onclick="backToQuiz()">Back to Quiz</button>
+    </div>
+</section>
+    <!-- javascript file source -->
+    <script src="js/firebaseConfig.js" type="module"></script>
+    <script src="js/multipleChoice.js" type="module"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

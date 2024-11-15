@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limit Function Calculator & Graph</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+    <!-- custom css file link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="calculator">
+ <!-- header section starts  -->
+ <header class="header">
+  <section class="flex">
+      <a href="home.html" class="logo">AbelMath.</a>
+      <div class="icons">
+          <div id="menu-btn" class="fas fa-bars"></div>
+          <div id="search-btn" class="fas fa-search"></div>
+          <div id="user-btn" class="fas fa-user"></div>        
+      </div>
+
+      <div class="profile">
+          <img src="../images/pic-5.jpg" alt="" >
+          <h3>Abel Apriliani</h3>
+          <a href="profile.html" class="btn">view profile</a>
+      </div>
+  </sectuon>
+</header>
+
+<div class="side-bar">
+
+  <div  class="close-btn">
+     <i class="fas fa-times"></i>
+  </div>
+
+  <div class="profile">
+      <img src="../images/pic-5.jpg" alt="" >
+      <h3>Abel Apriliani</h3>
+      <a href="profile.html" class="btn">view profile</a>
+  </div>
+
+  <nav class="navbar">
+     <a href="home.html"><i class="fas fa-home"></i><span>home</span></a>
+     <a href="playlist.html"><i class="fas fa-graduation-cap"></i><span>playlist</span></a>
+     <a href="quiz.html"><i class="fas fa-clipboard"></i><span>quiz corner</span></a>
+     <a href="calculatorInfo.html"><i class="fas fa-calculator"></i><span>calculator</span></a>
+  </nav>
+
+</div>
+    <h1>Limit Function Calculator & Graph</h1>    
+    <!-- Limit Input Section -->
+    <div class="limit-input">
+      <label for="limitInput">Function (f(x)): </label>
+      <input type="text" id="limitInput" placeholder="Enter function (e.g. sin(x)/x)">
+    </div>
+    
+    <div class="limit-input">
+      <label for="approachesInput">Limit as x approaches: </label>
+      <input type="number" id="approachesInput" placeholder="Enter value (e.g. 0)">
+    </div>
+    
+    <div class="keyboard">
+      <button onclick="insertSymbol('x')">x</button>
+      <button onclick="insertSymbol('^')">^</button>
+      <button onclick="insertSymbol('sqrt')">√</button>
+      <button onclick="insertSymbol('/')">/</button>
+      <button onclick="insertSymbol('sin')">sin</button>
+      <button onclick="insertSymbol('cos')">cos</button>
+      <button onclick="insertSymbol('log')">log</button>
+      <button onclick="clearInput()">Clear</button>
+      <button onclick="calculateLimit()">Calculate Limit</button>
+    </div>
+    
+    <!-- Result Display -->
+    <div id="limitResult"></div>
+    <!-- Graph Section -->
+    <div id="graph"></div>
+  </div>
+</body>
+
+<footer class="footer">
+  &copy; copyright @ 2024 by <span>Abel Apriliani 18222008</span> | all rights reserved!
+</footer>
+
+</html>
+<script src="js/calculator.js"></script>
+<script src="js/script.js"></script>
