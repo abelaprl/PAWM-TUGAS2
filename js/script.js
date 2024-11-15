@@ -71,3 +71,25 @@ document.addEventListener('DOMContentLoaded', function() {
        }
    }
 });
+
+function checkUserStatus() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+  
+    if (isLoggedIn) {
+      loginBtn.style.display = 'none';
+      registerBtn.style.display = 'none';
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      loginBtn.style.display = 'inline-block';
+      registerBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'none';
+    }
+  }
+  
+  // Run this function when the page loads
+  checkUserStatus();
+  
