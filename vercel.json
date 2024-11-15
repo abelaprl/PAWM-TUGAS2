@@ -1,4 +1,5 @@
 {
+    "ignoreFiles": ["public/index.html"],
     "rewrites": [
       {
         "source": "/(.*)",
