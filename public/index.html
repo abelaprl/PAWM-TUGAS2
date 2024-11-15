@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Register</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/11.0.2/firebase-app-compat.js"></script>
@@ -23,7 +23,7 @@
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
+    <!-- <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
       #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
@@ -36,16 +36,39 @@
         body, #message { margin-top: 0; background: white; box-shadow: none; }
         body { border-top: 16px solid #ffa100; }
       }
-    </style>
+    </style> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <header class="header">
+      <section class="flex">
+          <a href="index.html" class="logo">AbelMath.</a>
+      </section>
+  </header>
+   
+
+<section class="form-container">
+   <form action="" method="post" enctype="multipart/form-data">
+      <h3>register</h3>
+      <p>your email <span>*</span></p>
+      <input type="email" name="email" placeholder="enter your email" id = "email" required maxlength="50" class="box">
+      <p>your password <span>*</span></p>
+      <input type="password" name="pass" placeholder="enter your password" id = "password" required maxlength="20" class="box">
+      <input id = "submit" type="submit" value="register now" name="submit" class="btn">
+
+      <p class="login-link">Already have an account? <a href="../login.html">Login</a></p>
+   </form>
+</section>
+
+<footer class="footer">
+   &copy; copyright @ 2024 by <span>Abel Apriliani 18222008</span> | all rights reserved!
+</footer>
+
+<!-- custom js file link  -->
+<script src="../js/script.js"></script>
+<script type="module" src="../js/register.js" defer></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
