@@ -23,55 +23,27 @@
 
 
   // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+//submit button
 
-  const submit = document.getElementById('submit');
-
-  // tambahan
-  const storage = getStorage(app);
-  const db = getFirestore(app);
-
-  submit.addEventListener("click", async function(event){
+const submit = document.getElementById("submit");
+submit.addEventListener("click", function (event) {
     event.preventDefault();
-
-    //inputs
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const confirmPassword = document.getElementById('confirm-password').value;
-  const profilePicFile = document.getElementById('profile-pic').files[0];
-  
-  if (password !== confirmPassword) {
-    alert("Passwords do not match!");
-    return;
-}
-
-try {
-  // Create user in Firebase Auth
-  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-  const user = userCredential.user;
-  const userId = user.uid;
-
-  // Upload profile picture to Firebase Storage
-  const profilePicRef = ref(storage, `profile_pictures/${userId}`);
-  await uploadBytes(profilePicRef, profilePicFile);
-
-  // Get the URL of the uploaded image
-  const profilePicUrl = await getDownloadURL(profilePicRef);
-
-  // Save user info to Firestore
-  await setDoc(doc(db, "users", userId), {
-      name: name,
-      email: email,
-      profilePicUrl: profilePicUrl
-  });
-
-  alert("Account created successfully!");
-  window.location.href = "index.html";
-} catch (error) {
-  const errorMessage = error.message;
-  alert(errorMessage);
-}
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up
+      const user = userCredential.user;
+      alert("Creating Account...");
+      window.location.href="homepage.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+      // ..
+    });
 });
