@@ -56,6 +56,13 @@ body.active{
    padding-left: 0;
 }
 
+
+body.index-body {
+   padding-left: 0;
+   background-color: var(--light-bg); 
+}
+
+
 .grid-container {
    display: grid;
    grid-template-columns: repeat(4, 120px);
@@ -372,7 +379,6 @@ section{
    text-overflow: ellipsis;
    white-space: nowrap;
 }
-
 
 
 #search-btn{
